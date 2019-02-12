@@ -1,0 +1,27 @@
+body {
+	background-color: transparent;
+}
+.collectionmedium {
+	position: absolute;
+	width:95%;
+	height:70%;
+	margin-left:2%;
+}
+.row {
+	margin-top: 0.2%;
+}
+.searchMargin {
+	position: inherit;
+	margin-left: -25px;
+}
+.sharesNameFont {
+	font-size: 25px;
+	/* color: red; */
+}
+.sharesCodeFont {
+	font-size: 3px;
+}
+.fontColor {
+	/* color: red; */
+}
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>search</title>
+		<meta charset="utf-8">
+		<meta name="format-detection" content="telphone=no, email=no"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">
+		<meta name="keywords" content=""/>
+		<link rel="stylesheet" type="text/css" href="./css/bootstrap4/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="./css/search.css">
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/template.js"></script>
+		<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_1276026370'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/z_stat.php%3Fid%3D1276026370' type='text/javascript'%3E%3C/script%3E"));</script>
+	</head>
+
+	<body>
+		<div id="content">
+		</div>
+		<div class="collectionmedium">
+			<div class="container">
+				<div class="row">
+					<div class="col-md"><button type="button" class="btn btn-primary" onclick="diji('601600')">Save changes</button></div>
+				</div>
+				<div id="container" >
+					<script type="text/html" id="reportDate">
+						<div class="row">
+							<div class="col-md">{{obj.name}}（{{obj.code}}）</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">今日开盘价:{{obj.openingPrice}}</div><div class="col-md-3">昨日收盘价:{{obj.yesClosPrice}}</div><div class="col-md-3">今日最高价:{{obj.nowDHigPrice}}</div><div class="col-md-3">今日最低价:{{obj.nowDLowPrice}}</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">竞买价:{{obj.sellPrice}}</div><div class="col-md-3">竞卖价:{{obj.buyPrice}}</div><div class="col-md-3">成交的股数:{{obj.dealNum}}</div><div class="col-md-3">成交金额:{{obj.dealPrice}}</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">当前价格:{{obj.nowPrice}}</div><div class="col-md-6">当前时间:{{obj.date}} {{obj.time}} </div>
+						</div>
+						<div class="row">
+							<div class="col-md-8"><img style="-webkit-user-select: none;" src="http://image.sinajs.cn/newchart/min/n/sh601882.gif"></div>
+							<div class="col-md-4">
+								<div class="row"><div class="col-md">类型</div><div class="col-md">价格</div><div class="col-md">数量</div></div>
+								<div class="row"><div class="col-md">买一</div><div class="col-md">{{obj.sell1}}</div><div class="col-md">{{obj.sellNum1}}</div></div>
+								<div class="row"><div class="col-md">买二</div><div class="col-md">{{obj.sell2}}</div><div class="col-md">{{obj.sellNum2}}</div></div>
+								<div class="row"><div class="col-md">买三</div><div class="col-md">{{obj.sell3}}</div><div class="col-md">{{obj.sellNum3}}</div></div>
+								<div class="row"><div class="col-md">买四</div><div class="col-md">{{obj.sell4}}</div><div class="col-md">{{obj.sellNum4}}</div></div>
+								<div class="row"><div class="col-md">买五</div><div class="col-md">{{obj.sell5}}</div><div class="col-md">{{obj.sellNum5}}</div></div>
+								<div class="row"><div class="col-md">卖一</div><div class="col-md">{{obj.buy1}}</div><div class="col-md">{{obj.buyNum1}}</div></div>
+								<div class="row"><div class="col-md">卖二</div><div class="col-md">{{obj.buy2}}</div><div class="col-md">{{obj.buyNum2}}</div></div>
+								<div class="row"><div class="col-md">卖三</div><div class="col-md">{{obj.buy3}}</div><div class="col-md">{{obj.buyNum3}}</div></div>
+								<div class="row"><div class="col-md">卖四</div><div class="col-md">{{obj.buy4}}</div><div class="col-md">{{obj.buyNum4}}</div></div>
+								<div class="row"><div class="col-md">卖五</div><div class="col-md">{{obj.buy5}}</div><div class="col-md">{{obj.buyNum5}}</div></div>
+							</div>
+						</div>
+					</script>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+		function diji(code){
+			$ .ajax({
+				type:'GET',
+				dataType:'script',
+				async:true,
+				url:"http://hq.sinajs.cn/list=sh"+code,
+				cache:true,
+				dataTypeString:'script',
+				success:function(){
+						var data = eval("hq_str_sh"+code).split(",");
+						console.log(code,data)
+						shuj(code,data)
+					}
+				})
+		}
+		function shuj(code,elements){
+			var obj = {obj:{
+				name : 					elements[0],//股票名字
+				code : 					code,			//股票代码
+				openingPrice : 	elements[1],//今日开盘价
+				yesClosPrice : 	elements[2],//昨日收盘价
+				nowPrice : 			elements[3],//当前价格
+				nowDHigPrice : 	elements[4],//今日最高价
+				nowDLowPrice : 	elements[5],//今日最低价
+				date : 					elements[30],//日期
+				time : 					elements[31],//时间
+				sellPrice : 		elements[6],//竞买价，即买一报价
+				buyPrice : 			elements[7],//竞卖价，即卖一报价
+				dealNum : 			elements[8]/100,//成交的股票数，由于股票交易以一百股为基本单位，所以在使用时，通常把该值除以一百
+				dealPrice : 		elements[9]/10000,//成交金额，单位为“元”，为了一目了然，通常以“万元”为成交金额的单位，所以通常把该值除以一万
+				sellNum1 : 			elements[10]/100,//买一申请股数
+				sell1 : 				elements[11],//买一申请报价
+				sellNum2 : 			elements[12]/100,//
+				sell2 : 				elements[13],//
+				sellNum3 : 			elements[14]/100,//
+				sell3 : 				elements[15],//
+				sellNum4 : 			elements[16]/100,//
+				sell4 : 				elements[17],//
+				sellNum5 : 			elements[18]/100,//
+				sell5 : 				elements[19],//
+				buyNum1 : 			elements[20]/100,//卖一申请股数
+				buy1 : 					elements[21],//卖一申请报价
+				buyNum2 : 			elements[22]/100,//
+				buy2 : 					elements[23],//
+				buyNum3 : 			elements[24]/100,//
+				buy3 : 					elements[25],//
+				buyNum4 : 			elements[26]/100,//
+				buy4 : 					elements[27],//
+				buyNum5 :				elements[28]/100,//
+				buy5 : 					elements[29]//
+			}}
+			var html = template("reportDate", obj);
+			$("#container").html("");
+			$("#container").append(html);
+		}
+		</script>
+	</body>
+</html>

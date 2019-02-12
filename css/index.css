@@ -1,0 +1,56 @@
+html {
+	height: 100%;
+}
+body {
+	background-color:rgb(64, 64, 64);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	height: 100%;
+	color: #000002;
+}
+.icon {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+	font-size: xx-large;
+}
+.medium {
+	width: 70%;
+	background-color: rgba(240, 240, 240, .2);
+	position: absolute;
+	height: 60%;
+	margin-left: 15%;
+	margin-top: 10%;
+	min-width: 1000px;
+	min-height: 370px;
+}
+.liBs {
+	background-color: rgba(240, 240, 240, 0.6);
+}
+.indexIframe {
+	height: calc(100% - 42px);
+}
+.foot {
+	position: absolute;
+	margin-left: 30%;
+	margin-top: 10%;
+	width: 100%;
+	min-width: 1000px;
+	font-size: 6px;
+	color: #007bff;
+}
+.imgFloating{
+	visibility: hidden;
+	width: 7rem;
+    position: absolute;
+    opacity: 0;
+	bottom: 2.2rem;;
+}
+.wechat:hover .imgFloating, .qq:hover .imgFloating {
+    opacity: 1;
+    visibility: visible;
+}

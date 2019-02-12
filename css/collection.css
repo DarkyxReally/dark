@@ -1,0 +1,15 @@
+body {
+	background-color: transparent;
+}
+.collectionmedium {
+	position: absolute;
+	width:95%;
+	height:70%;
+	margin-left:2%;
+}
+.row {
+	margin-top: 4%;
+}
+.btn-outline-info {
+	width: 100%;
+}
