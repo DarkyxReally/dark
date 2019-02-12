@@ -42,11 +42,18 @@ function pullSharesCode(code){
 }
 function getSharesBysina(){
 	var code = $("#sharesCodeHid").val();
+	var ishttps = 'https:' == document.location.protocol ? true: false;
+	var url = "hq.sinajs.cn/list=sh"+code;
+	if(ishttps){
+		url = 'https://' + url;
+	}else{
+		url = 'http://' + url;
+	}
 	$ .ajax({
 		type:'GET',
 		dataType:'script',
 		async:true,
-		url:"hq.sinajs.cn/list=sh"+code,
+		url:url,
 		cache:true,
 		dataTypeString:'script',
 		success:function(){
