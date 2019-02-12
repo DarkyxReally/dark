@@ -99,6 +99,9 @@ function initAUrl(){
 				},{
 					'name':'设计师网址',
 					'url':'https://hao.uisdc.com',
+				},{
+					'name':'GitHub',
+					'url':'https://github.com/',
 				}];
 	//循环显示AUrl对象数据
 	var defaultColumn = 6;
