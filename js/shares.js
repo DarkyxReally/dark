@@ -46,7 +46,7 @@ function getSharesBysina(){
 		type:'GET',
 		dataType:'script',
 		async:true,
-		url:"http://hq.sinajs.cn/list=sh"+code,
+		url:"hq.sinajs.cn/list=sh"+code,
 		cache:true,
 		dataTypeString:'script',
 		success:function(){
