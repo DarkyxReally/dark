@@ -42,7 +42,7 @@ body {
 .foot {
 	position: absolute;
 	margin-left: 30%;
-	margin-top: 10%;
+	/* margin-top: 10%;*/
 	width: 100%;
 	min-width: 1000px;
 	font-size: 6px;
