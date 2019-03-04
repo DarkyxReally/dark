@@ -5,7 +5,9 @@ body {
 	background-color:rgb(64, 64, 64);
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	/* background-size: cover; */
+	background-size: 100% 100%;
+    background-attachment: fixed;
 	overflow: hidden;
 	height: 100%;
 	color: #000002;
@@ -19,14 +21,17 @@ body {
 	font-size: xx-large;
 }
 .medium {
-	width: 70%;
+	
 	background-color: rgba(240, 240, 240, .2);
-	position: absolute;
-	height: 60%;
-	margin-left: 15%;
-	margin-top: 10%;
+	/* position: absolute;*/
+	position: fixed;
+	height: 70%;
+	width: 80%;
+	/* margin-left: 15%;
+	margin-top: 10%;*/
+	margin: 10% 10% 10% 10%;
 	min-width: 1000px;
-	min-height: 370px;
+	min-height: 400px;
 }
 .liBs {
 	background-color: rgba(240, 240, 240, 0.6);
