@@ -71,7 +71,7 @@ function initAUrl(){
 					'url':'www.szzfgjj.com',
 				},{
 					'name':'深圳汽车牌照摇号',
-					'url':'xqctk.jtys.sz.gov.cn/',
+					'url':'xqctk.jtys.sz.gov.cn',
 				},{
 					'name':'长沙住建局',
 					'url':'szjw.changsha.gov.cn',
