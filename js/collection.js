@@ -101,7 +101,10 @@ function initAUrl(){
 					'url':'hao.uisdc.com',
 				},{
 					'name':'GitHub',
-					'url':'github.com/',
+					'url':'github.com',
+				},{
+					'name':'腾讯在线文档',
+					'url':'docs.qq.com',
 				}];
 	//循环显示AUrl对象数据
 	var defaultColumn = 6;
