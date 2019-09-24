@@ -13,17 +13,14 @@ function initAUrl(){
 					'name':'百度翻译',
 					'url':'fanyi.baidu.com',
 				},{
-					'name':'积粒网',
+					'name':'学习记录',
 					'url':'www.91wenwen.net',
 				},{
-					'name':'调查网',
+					'name':'资料记录',
 					'url':'www.1diaocha.com',
 				},{
-					'name':'艾瑞调研',
+					'name':'学习资料',
 					'url':'www.iclick.cn',
-				},{
-					'name':'公司OA正式环境',
-					'url':'oa.ibumobile.com',
 				},{
 					'name':'淘宝网',
 					'url':'www.taobao.com',
