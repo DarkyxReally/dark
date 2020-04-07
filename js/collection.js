@@ -14,7 +14,7 @@ function initAUrl(){
 					'url':'fanyi.baidu.com',
 				},{
 					'name':'学习记录',
-					'url':'www.91wenwen.net',
+					'url':'www.zanli.com',
 				},{
 					'name':'资料记录',
 					'url':'www.1diaocha.com',
